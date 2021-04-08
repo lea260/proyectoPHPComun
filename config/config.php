@@ -1,7 +1,7 @@
 <?php
 
 //define('URL', 'http://localhost/mvc/');
-define('URL', 'http://' . $_SERVER['HTTP_HOST'] . '/mvc/');
+define('URL', 'http://' . $_SERVER['HTTP_HOST'] . '/prophp3bj/proyectoPHPComun/');
 
 //conexion a la base de datos
 define('HOST', 'localhost');

@@ -14,7 +14,7 @@
 
     <div id="main">
         <div><?php echo $this->mensaje; ?></div>
-        <h1 class="center">Actualizar <?php echo $this->alumno->matricula; ?></h1>
+        <h1 class="center">la mejor cabecera <?php echo $this->alumno->matricula; ?></h1>
 
         <form action="<?php echo constant('URL'); ?>consulta/actualizarAlumno/" method="POST">
             <label for="">Matrícula</label><br>

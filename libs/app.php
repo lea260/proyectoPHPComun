@@ -1,6 +1,6 @@
 <?php
 
-require_once 'controllers/errores.php';
+require_once 'controllers/Errores_Controller.php';
 
 class App
 {
@@ -57,7 +57,7 @@ class App
                 $controller->render();
             }
         } else {
-            $controller = new Errores();
+            $controller = new Errores_Controller();
         }
     }
 }

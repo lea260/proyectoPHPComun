@@ -10,6 +10,7 @@
     <li><a href="<?php echo constant('URL'); ?>index">Inicio</a></li>
     <li><a href="<?php echo constant('URL'); ?>nuevo">Nuevo</a></li>
     <li><a href="<?php echo constant('URL'); ?>consulta">Consulta</a></li>
+    <li><a href="<?php echo constant('URL'); ?>pedro">Pedro</a></li>
 </ul>
 
 </div>

@@ -7,7 +7,7 @@ class Consulta_Controller extends Controller
         parent::__construct();
         $this->view->mensaje = "";
     }
-
+·$cambio="a deshacer";
     public function render()
     {
 

@@ -4,7 +4,8 @@ class Consulta_Controller extends Controller
 {
     public function __construct()
     {
-        $cambio = "adeshacer";
+
+        $cambio = "a eliminar";
         parent::__construct();
         $this->view->mensaje = "";
     }

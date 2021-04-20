@@ -13,7 +13,6 @@ class Axel_Controller extends Controller
     public function render()
     {
 
-        $this->view->alumnos = $alumnos;
         $this->view->render('axel/index');
         //var_dump($this);
         //var_dump($this->view);

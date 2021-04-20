@@ -6,6 +6,8 @@ class Axel_Controller extends Controller
     {
         parent::__construct();
         $this->view->mensaje = "";
+        $this->view->mensaje2 = "";
+        $this->view->mensaje3 = "";
     }
 
     public function render()

@@ -12,6 +12,6 @@ class Login_Controller extends Controller
     {
         //$alumnos = $this->model->get();
         $this->view->alumnos = "cargado";
-        $this->view->render('leandro/index');
+        $this->view->render('login/index');
     }
 }

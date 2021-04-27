@@ -16,6 +16,21 @@
             <h1>Login</h1>
         </div>
     </div>
+        <form class="row">
+        <div class="col-md-6 col-sm-12">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="col-md-12 col-sm-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </form>
     </div>
     <?php require 'views/footer2.php';?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

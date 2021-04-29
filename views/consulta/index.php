@@ -11,13 +11,13 @@
 <body>
 
     <?php require 'views/header2.php';?>
-    <?php include_once 'models/alumno.php';?>
+    <?php include_once 'entidades/alumno.php';?>
 <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
 
 <div class="container">
     <div class="row">
         <div class="col-sm">
-        Sección de consulta
+        <h1>Sección de consulta</h1>
     </div>
     <div class="row">
         <div class="col-sm">
@@ -54,46 +54,6 @@ foreach ($this->alumnos as $row) {
 </div>
 
 
-
-
-
-
-
-
-    <div id="main">
-        <div><?php echo $this->mensaje; ?></div>
-        <h1 class="center"></h1>
-
-        <table width="100%" id="tabla">
-            <thead>
-                <tr>
-                    <th>Matrícula</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-
-            <tbody id="tbody-alumnos">
-
-        <?php
-
-foreach ($this->alumnos as $row) {
-    $alumno = new Alumno();
-    $alumno = $row;
-    ?>
-                <tr id="fila-<?php echo $alumno->matricula; ?>">
-                    <td><?php echo $alumno->matricula; ?></td>
-                    <td><?php echo $alumno->nombre; ?></td>
-                    <td><?php echo $alumno->apellido; ?></td>
-                    <td><a class="btn btn-primary" href="<?php echo constant('URL') . 'consulta/verAlumno/' . $alumno->matricula; ?>">Actualizar</a></td>
-                    <td><button class="btn btn-primary" data-matricula="<?php echo $alumno->matricula; ?>">Eliminar</button></td>
-                </tr>
-        <?php }?>
-            </tbody>
-        </table>
-    </div>
     <?php require 'views/footer2.php';?>
 
 

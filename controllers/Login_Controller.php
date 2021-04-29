@@ -22,8 +22,9 @@ class Login_Controller extends Controller
         //$this->view->alumnos = "exitoso";
         //$this->view->post = var_dump($_POST);
 
-        $email = $_POST['email'];
+        $nombre = $_POST['nombre'];
         $pass = $_POST['pass'];
+        $modelo = $this->model->ingresar($nombre, $pass);
 
         $this->view->email = $email;
         $this->view->pass = $pass;

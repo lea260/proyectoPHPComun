@@ -24,7 +24,7 @@
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
-            value="leandro">
+            value="juan">
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
             <label for="exampleInputPassword1" class="form-label">Password</label>

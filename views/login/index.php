@@ -23,7 +23,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            name="email"
+            name="nombre"
             value="juan">
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">

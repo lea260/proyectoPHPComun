@@ -30,10 +30,10 @@
 
 
       </ul>
-      <div class="d-flex">
-        <a class="btn btn-outline-light" href="#">Registarse</a>
-        <a class="btn btn-outline-light mx-2" href="<?php echo constant('URL'); ?>login">Ingresar</a>
-      </div>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>

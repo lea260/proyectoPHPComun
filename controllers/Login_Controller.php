@@ -8,10 +8,26 @@ class Login_Controller extends Controller
         $this->view->mensaje = "";
     }
 
+    //base+login
     public function render()
     {
         //$alumnos = $this->model->get();
         $this->view->alumnos = "cargado";
         $this->view->render('login/index');
+    }
+
+    public function ingresar()
+    {
+        //$alumnos = $this->model->get();
+        //$this->view->alumnos = "exitoso";
+        //$this->view->post = var_dump($_POST);
+
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+
+        $this->view->email = $email;
+        $this->view->pass = $pass;
+        $this->view->ingreso = "si";
+        $this->view->render('login/ingresar');
     }
 }

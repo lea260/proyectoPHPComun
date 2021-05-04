@@ -26,7 +26,6 @@ class Login_Controller extends Controller
         $pass = $_POST['pass'];
         $exitoLogin = $this->model->ingresar($nombre, $pass);
         if ($exitoLogin) {
-            session_start();
             $_SESSION["estalogueado"] = true;
             $_SESSION["nombre"] = $nombre;
             $this->view->render('login/ingresar');
@@ -35,5 +34,11 @@ class Login_Controller extends Controller
             $this->view->render('login/index');
         }
 
+    }
+    public function salir()
+    {
+        $_SESSION["estalogueado"] = false;
+        unset($_SESSION["nombre"]);
+        $this->view->render('index/index');
     }
 }

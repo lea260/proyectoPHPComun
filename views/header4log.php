@@ -32,8 +32,8 @@
       </ul>
       <div class="d-flex">
       <?php $estaLogueado = $_SESSION["estalogueado"];
-$nombre = $_SESSION["nombre"];
-if ($estaLogueado) {?>
+if ($estaLogueado) {
+    ?><?php $nombre = $_SESSION["nombre"];?>
           <a class="btn btn-outline-light" href="#"><?php echo $nombre; ?></a>
           <a class="btn btn-outline-light mx-2" href="<?php echo constant('URL'); ?>login/salir">Salir</a>
 <?php } else {

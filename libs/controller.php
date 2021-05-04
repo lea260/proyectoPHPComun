@@ -8,6 +8,7 @@ class Controller
     public function __construct()
     {
         $this->view = new View();
+        session_start();
         //echo "<p>Controlador principal</p>";
     }
 

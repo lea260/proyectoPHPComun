@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <?php require 'views/header2.php';?>
+    <?php require 'views/header4log.php';?>
     <?php include_once 'entidades/alumno.php';?>
 <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
 

@@ -16,6 +16,11 @@
             <h1>Login</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm">
+            <h1><?php echo $this->resultadoLogin; ?></h1>
+        </div>
+    </div>
         <form class="row" action="<?php echo constant('URL'); ?>login/ingresar" method="post">
         <div class="col-lg-4 col-md-6 col-sm-12">
             <label for="exampleInputEmail1" class="form-label">Email address</label>

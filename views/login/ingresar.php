@@ -19,7 +19,8 @@
     </div>
     <div class="row">
         <div class="col-sm">
-          <h2>Email: <?php echo $this->email; ?></h2>
+          <h2>Email:
+          <?php echo $this->nombre; ?></h2>
             <h2>Pass:&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $this->pass; ?></h2>
         </div>
     </div>

@@ -36,7 +36,6 @@ class Consulta_Controller extends Controller
         $idAlumno = $param[0];
         $alumno = $this->model->getById($idAlumno);
 
-        session_start();
         $_SESSION["id_verAlumno"] = $alumno->matricula;
 
         $this->view->alumno = $alumno;
@@ -45,7 +44,6 @@ class Consulta_Controller extends Controller
 
     public function actualizarAlumno($param = null)
     {
-        session_start();
         //seguridad
         var_dump($_SESSION);
         //por eso lo recupera, de la sesion

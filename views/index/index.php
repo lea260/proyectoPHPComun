@@ -10,16 +10,21 @@
 </head>
 <body>
 
-    <?php require 'views/header2.php';?>
+    <?php require 'views/header4log.php';?>
+    <?php include_once 'entidades/alumno.php';?>
+<input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
 
-    <div id="main">
-        <h1 class="center">Bienvenido al sitio</h1>
-        <h1 class="center"><?php echo $_SERVER['SERVER_NAME']; ?></h1>
-        <h1 class="center"><?php echo constant('URL'); ?></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        <h1>Sección Incial</h1>
     </div>
 
     <?php require 'views/footer2.php';?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
+
+    <!-- importo el javascript-->
+    <script src="<?php echo constant('URL'); ?>/public/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>

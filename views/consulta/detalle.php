@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <?php require 'views/header2.php';?>
+    <?php require 'views/header4log.php';?>
 
     <div id="main">
         <div><?php echo $this->mensaje; ?></div>

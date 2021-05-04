@@ -29,6 +29,7 @@ class Login_Controller extends Controller
             session_start();
             $_SESSION["estalogueado"] = true;
             $_SESSION["nombre"] = $nombre;
+            $this->view->render('login/ingresar');
         } else {
             $this->view->resultadoLogin = "usuario o contraseña incorrectos";
             $this->view->render('login/index');

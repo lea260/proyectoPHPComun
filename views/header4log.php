@@ -31,7 +31,12 @@
 
       </ul>
       <div class="d-flex">
-      <?php $estaLogueado = $_SESSION["estalogueado"];
+      <?php if (isset($_SESSION["estalogueado"])) {
+    $estaLogueado = $_SESSION["estalogueado"];
+} else {
+    $estaLogueado = false;
+}
+$estaLogueado = isset($_SESSION["estalogueado"]) ? $_SESSION["estalogueado"] : false;
 if ($estaLogueado) {
     ?><?php $nombre = $_SESSION["nombre"];?>
           <a class="btn btn-outline-light" href="#"><?php echo $nombre; ?></a>

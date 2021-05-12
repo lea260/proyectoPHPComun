@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <?php require 'views/header.php';?>
+    <?php require 'views/header4log.php';?>
 
         <h1 class="center">Sección de leandro</h1>
 

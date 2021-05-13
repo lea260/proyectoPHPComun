@@ -20,7 +20,8 @@ class Apileaarticulos_Controller extends Controller
 
     public function listar()
     {
-        $this->view->articulos = json_encode(['mensaje' => 'No hay elementos']);
+        $articulos = $this->model->get();
+        $this->view->articulos = json_encode($articulos);
         $this->view->render('apilea/articulos/listar');
         //var_dump($this);
         //var_dump($this->view);

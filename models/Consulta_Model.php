@@ -24,7 +24,8 @@ class Consulta_Model extends Model
                 $item->nombre = $row['nombre'];
                 $item->apellido = $row['apellido'];
 
-                array_push($items, $item);
+                //array_push($items, $item);
+                $items[] = $item;
 
             }
             return $items;

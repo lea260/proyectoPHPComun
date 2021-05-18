@@ -1,4 +1,5 @@
 <?php
+require 'entidades/articulo.php';
 
 class Apileaarticulos_Controller extends Controller
 {
@@ -34,9 +35,12 @@ class Apileaarticulos_Controller extends Controller
         $json = file_get_contents('php://input');
         //convierto en un array asociativo de php
         $obj = json_decode($json);
+        $articulo = new Articulo();
+        $articulo->id = $obj->id;
+        $articulo->nombre = $obj->nombre;
         $articulos = $this->model->get();
         $this->view->articulos = json_encode($articulos);
-        $this->view->json = json_encode($json);
+        $this->view->json = json_encode($articulo);
         $this->view->render('apilea/articulos/crear');
         //var_dump($this);
         //var_dump($this->view);

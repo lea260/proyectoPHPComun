@@ -41,6 +41,12 @@ class Apileaarticulos_Controller extends Controller
         $articulos = $this->model->get();
         $this->view->articulos = json_encode($articulos);
         $this->view->json = json_encode($articulo);
+        $respuesta = [
+            "datos" => $obj,
+            "totResultado" => 2,
+        ];
+        $this->view->respuesta = json_encode($respuesta);
+
         $this->view->render('apilea/articulos/crear');
         //var_dump($this);
         //var_dump($this->view);

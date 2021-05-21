@@ -38,9 +38,7 @@ class Apileaarticulos_Model extends Model
         $item = new Alumno();
         try {
             $query = $this->db->connect()->prepare('SELECT * FROM alumnos WHERE matricula = :id');
-
             $query->execute(['id' => $id]);
-
             while ($row = $query->fetch()) {
 
                 $item->matricula = $row['matricula'];

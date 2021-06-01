@@ -32,4 +32,29 @@ class Api260260articulos_Model extends Model
             return [];
         }
     } //end listar
+
+    public function crear($articulo)
+    {
+
+        try {
+            $query = $this->db->connect()->prepare('insert into productos (codigo, descripcion,precio, fecha) values (:codigo, :descripcion, :precio, :fecha)');
+            $query->bindParam(':codigo', $articulo->codigo);
+            $query->bindParam(':descripcion', $articulo->descripcion);
+            $query->bindParam(':precio', $articulo->precio);
+            $query->bindParam(':fecha', $articulo->fecha);
+            //:descripcion, :precio, :fecha
+            $lastInsertId = 0;
+            if ($query->execute()) {
+                $lastInsertId = $query->lastInsertId();
+            } else {
+                //Pueden haber errores, como clave duplicada
+                $lastInsertId = 0;
+                echo $consulta->errorInfo()[2];
+            }
+            $consulta->close();
+            return $lastInsertId;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }

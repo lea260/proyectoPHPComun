@@ -61,7 +61,7 @@ class Api260260articulos_Controller extends Controller
         //array_push($listaArticulos, $articulo);
         //$items[] = $item;
 
-        $modeloCargado = $this->model->crear($articulo);
+        $lastInsertId = $this->model->crear($articulo);
         //$articulo->id = $obj->id;
         //$articulo->nombre = $obj->nombre;
         //$articulos = $this->model->get();
@@ -69,8 +69,7 @@ class Api260260articulos_Controller extends Controller
         //$listaObjetos = json_encode($listaArticulos);
 
         $respuesta = [
-            "datos" => "hola",
-            "totalResultados" => 5,
+            "ArituloId" => $lastInsertId,
         ];
         $this->view->respuesta = json_encode($respuesta);
 

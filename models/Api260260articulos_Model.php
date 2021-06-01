@@ -36,8 +36,9 @@ class Api260260articulos_Model extends Model
     public function crear($articulo)
     {
 
+        $pdo = $query = $this->db->connect();
         try {
-            $query = $this->db->connect()->prepare('insert into productos (codigo, descripcion,precio, fecha) values (:codigo, :descripcion, :precio, :fecha)');
+            $query = $pdo->prepare('insert into productos (codigo, descripcion,precio, fecha) values (:codigo, :descripcion, :precio, :fecha)');
             $query->bindParam(':codigo', $articulo->codigo);
             $query->bindParam(':descripcion', $articulo->descripcion);
             $query->bindParam(':precio', $articulo->precio);
@@ -45,16 +46,18 @@ class Api260260articulos_Model extends Model
             //:descripcion, :precio, :fecha
             $lastInsertId = 0;
             if ($query->execute()) {
-                $lastInsertId = $query->lastInsertId();
+                $lastInsertId = $pdo->$lastInsertId();
             } else {
                 //Pueden haber errores, como clave duplicada
-                $lastInsertId = 0;
-                echo $consulta->errorInfo()[2];
+                $lastInsertId = -1;
+                //echo $consulta->errorInfo()[2];
             }
-            $consulta->close();
+            //$query->close();
             return $lastInsertId;
         } catch (PDOException $e) {
-            return false;
+            return -1;
+        } finally {
+            $pdo->close();
         }
     }
 }

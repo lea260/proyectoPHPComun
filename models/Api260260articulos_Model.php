@@ -46,7 +46,7 @@ class Api260260articulos_Model extends Model
             //:descripcion, :precio, :fecha
             $lastInsertId = 0;
             if ($query->execute()) {
-                $lastInsertId = $pdo->$lastInsertId();
+                $lastInsertId = $pdo->lastInsertId();
             } else {
                 //Pueden haber errores, como clave duplicada
                 $lastInsertId = -1;
@@ -57,7 +57,7 @@ class Api260260articulos_Model extends Model
         } catch (PDOException $e) {
             return -1;
         } finally {
-            $pdo->close();
+            // $pdo->close();
         }
     }
 }

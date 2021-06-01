@@ -57,7 +57,7 @@ class Api260260articulos_Model extends Model
         } catch (PDOException $e) {
             return -1;
         } finally {
-            // $pdo->close();
+            $pdo = null;
         }
     }
 }

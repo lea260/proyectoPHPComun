@@ -28,4 +28,22 @@ class Api260260articulos_Controller extends Controller
         //var_dump($this->view);
     }
 
+    public function litar()
+    {
+
+        $listaArticulos = $this->model->listar();
+        $respuesta = [
+            "datos" => $listaArticulos,
+            "totalResultados" => count($listaArticulos),
+        ];
+        $this->view->respuesta = json_encode($respuesta);
+
+        $this->view->render('api260260/articulos/listar');
+        //var_dump($this);
+        //var_dump($this->view);
+        //$this->view->render('apilea/articulos/index');
+        //var_dump($this);
+        //var_dump($this->view);
+    }
+
 }

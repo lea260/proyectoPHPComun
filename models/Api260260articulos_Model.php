@@ -86,6 +86,7 @@ class Api260260articulos_Model extends Model
 
     public function borrar($id)
     {
+        $resultado = false;
         $pdo = $query = $this->db->connect();
         try {
             $query = $pdo->prepare('delete from productos where id_productos=:id');
@@ -95,7 +96,7 @@ class Api260260articulos_Model extends Model
             }
             //:descripcion, :precio, :fecha
             //$query->close();
-            return true;
+            return $resultado;
         } catch (PDOException $e) {
             return false;
         } finally {

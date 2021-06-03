@@ -59,5 +59,28 @@ class Api260260articulos_Model extends Model
         } finally {
             $pdo = null;
         }
-    }
+    } //end crear
+    public function crearm($lista)
+    {
+
+        $pdo = $query = $this->db->connect();
+        try {
+            $query = $pdo->prepare('insert into productos (codigo, descripcion,precio, fecha) values (:codigo, :descripcion, :precio, :fecha)');
+            foreach ($lista as $key => $articulo) {
+                # code...
+                $query->bindParam(':codigo', $articulo->codigo);
+                $query->bindParam(':descripcion', $articulo->descripcion);
+                $query->bindParam(':precio', $articulo->precio);
+                $query->bindParam(':fecha', $articulo->fecha);
+                $query->execute();
+            }
+            //:descripcion, :precio, :fecha
+            //$query->close();
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        } finally {
+            $pdo = null;
+        }
+    } //end crearm
 }

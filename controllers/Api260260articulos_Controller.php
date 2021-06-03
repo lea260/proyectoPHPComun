@@ -61,7 +61,7 @@ class Api260260articulos_Controller extends Controller
         //array_push($listaArticulos, $articulo);
         //$items[] = $item;
 
-        $lastInsertId = $this->model->crear($articulo);
+        $resultado = $this->model->crear($articulo);
         //$articulo->id = $obj->id;
         //$articulo->nombre = $obj->nombre;
         //$articulos = $this->model->get();
@@ -69,11 +69,11 @@ class Api260260articulos_Controller extends Controller
         //$listaObjetos = json_encode($listaArticulos);
 
         $respuesta = [
-            "ArituloId" => $lastInsertId,
+            "ArituloId" => $resultado,
         ];
         $this->view->respuesta = json_encode($respuesta);
 
-        $this->view->render('api260/articulos/crear02');
+        $this->view->render('api260260/articulos/crearm');
         //var_dump($this);
         //var_dump($this->view);
     } //end crear
@@ -112,7 +112,7 @@ class Api260260articulos_Controller extends Controller
         ];
         $this->view->respuesta = json_encode($respuesta);
 
-        $this->view->render('api260/articulos/crear02');
+        $this->view->render('api260/articulos/crearm');
         //var_dump($this);
         //var_dump($this->view);
     }

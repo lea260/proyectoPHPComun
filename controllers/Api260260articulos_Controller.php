@@ -105,4 +105,18 @@ class Api260260articulos_Controller extends Controller
 
     }
 
+    public function borrar($param)
+    {
+        $id = $param[0];
+        $param01 = $param[1];
+        $param02 = $param[2];
+        $param03 = $param[3];
+        $resultado = $this->model->borrar($id);
+        $respuesta = [
+            "ArituloId" => $id,
+            "resultado" => $resultado,
+        ];
+        $this->view->respuesta = json_encode($respuesta);
+        $this->view->render('api260260/articulos/borrar');
+    }
 }

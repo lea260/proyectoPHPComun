@@ -83,4 +83,23 @@ class Api260260articulos_Model extends Model
             $pdo = null;
         }
     } //end crearm
+
+    public function borrar($id)
+    {
+        $pdo = $query = $this->db->connect();
+        try {
+            $query = $pdo->prepare('delete from productos where id_productos=:id');
+            $query->bindParam(':id', $id);
+            if ($query->execute()) {
+                $resultado = true;
+            }
+            //:descripcion, :precio, :fecha
+            //$query->close();
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        } finally {
+            $pdo = null;
+        }
+    } //end crearm
 }

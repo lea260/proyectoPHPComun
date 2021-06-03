@@ -121,4 +121,25 @@ class Api260260articulos_Controller extends Controller
         $this->view->respuesta = json_encode($respuesta);
         $this->view->render('api260260/articulos/borrar');
     }
+
+    public function actualizar()
+    {
+        $json = file_get_contents('php://input');
+        $obj = json_decode($json);
+        $articulo = new Articulo();
+        $articulo->id = $obj->id;
+        $articulo->codigo = $obj->codigo;
+        $articulo->descripcion = $obj->descripcion;
+        $articulo->precio = $obj->precio;
+        $articulo->fecha = $obj->fecha;
+        $resultado = $this->model->actualizar($articulo);
+        $verboHTTP = $_SERVER['REQUEST_METHOD'];
+        $respuesta = [
+            "ArituloId" => $articulo->id,
+            "resultado" => $resultado,
+            "verboHTTP" => $verboHTTP,
+        ];
+        $this->view->respuesta = json_encode($respuesta);
+        $this->view->render('api260260/articulos/crearm');
+    } //end update
 }

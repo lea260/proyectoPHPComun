@@ -83,7 +83,10 @@ class Api260260articulos_Model extends Model
             $pdo = null;
         }
     } //end crearm
-
+    //create insert
+    //read select
+    //update update
+    //delete delete
     public function borrar($id)
     {
         $resultado = false;

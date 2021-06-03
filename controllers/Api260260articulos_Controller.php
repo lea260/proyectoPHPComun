@@ -101,7 +101,7 @@ class Api260260articulos_Controller extends Controller
             "ArituloId" => $resultado,
         ];
         $this->view->respuesta = json_encode($respuesta);
-        $this->view->render('api260/articulos/crearm');
+        $this->view->render('api260260/articulos/crearm');
 
     }
 

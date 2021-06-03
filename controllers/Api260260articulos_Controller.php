@@ -76,6 +76,45 @@ class Api260260articulos_Controller extends Controller
         $this->view->render('api260/articulos/crear02');
         //var_dump($this);
         //var_dump($this->view);
+    } //end crear
+
+    public function crearm()
+    {
+        //obtengo los datos de la peticion http, post body
+        $json = file_get_contents('php://input');
+        //convierto en un array asociativo de php
+
+        $listaArticulos = json_decode($json);
+        $lista = [];
+        foreach ($listaArticulos as $key => $obj) {
+            # code...
+            $articulo = new Articulo();
+            $articulo->codigo = $obj->codigo;
+            $articulo->descripcion = $obj->descripcion;
+            $articulo->precio = $obj->precio;
+            $articulo->fecha = $obj->fecha;
+            //$lista[] = $articulo;
+            array_push($lista, $articulo);
+        }
+
+        //array_push($listaArticulos, $articulo);
+        //$items[] = $item;
+
+        $resultado = $this->model->crearm($lista);
+        //$articulo->id = $obj->id;
+        //$articulo->nombre = $obj->nombre;
+        //$articulos = $this->model->get();
+        //$this->view->articulos = json_encode($articulos);
+        //$listaObjetos = json_encode($listaArticulos);
+
+        $respuesta = [
+            "ArituloId" => $lastInsertId,
+        ];
+        $this->view->respuesta = json_encode($respuesta);
+
+        $this->view->render('api260/articulos/crear02');
+        //var_dump($this);
+        //var_dump($this->view);
     }
 
 }

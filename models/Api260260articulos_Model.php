@@ -133,23 +133,24 @@ class Api260260articulos_Model extends Model
 
     public function ver($id)
     {
-        $tieneAcceso = false;
+        $articulo = null;
         try {
-            $query = $this->db->connect()->prepare('SELECT id_productos, codigo,descripcion,precio,fecha FROM productos WHERE id=:id');
-            $query->bindValue(':id', $id);
+            $query = $this->db->connect()->prepare('SELECT id_productos, codigo,descripcion,precio,fecha FROM productos WHERE id_productos=:nnn');
+            $query->bindValue(':nnn', $id);
             //$query->execute(['nombre' => $nombre]);
             $query->execute();
-            $paswordStr = "";
             while ($row = $query->fetch()) {
-                $paswordStr = $row['password'];
-            }
-            if ($paswordStr == $pass) {
-                $tieneAcceso = true;
+                $articulo = new Articulo();
+                $articulo->id = $row['id_productos'];
+                $articulo->codigo = $row['codigo'];
+                $articulo->descripcion = $row['descripcion'];
+                $articulo->precio = $row['precio'];
+                $articulo->fecha = $row['fecha'];
             }
         } catch (PDOException $e) {
             var_dump($e);
         }
-        return $tieneAcceso;
+        return $articulo;
     } //end ver
 
 }

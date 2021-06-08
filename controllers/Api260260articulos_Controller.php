@@ -143,11 +143,11 @@ class Api260260articulos_Controller extends Controller
     public function ver($param)
     {
         $id = $param[0];
-        $resultado = $this->model->ver($id);
+        $articulo = $this->model->ver($id);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [
-            "ArituloId" => $id,
-            "resultado" => $resultado,
+            "ArituloId" => $articulo->id,
+            "datos" => $articulo,
             "verboHTTP" => $verboHTTP,
         ];
         $this->view->respuesta = json_encode($respuesta);

@@ -108,9 +108,6 @@ class Api260260articulos_Controller extends Controller
     public function borrar($param)
     {
         $id = $param[0];
-        $param01 = $param[1];
-        $param02 = $param[2];
-        $param03 = $param[3];
         $resultado = $this->model->borrar($id);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [
@@ -120,7 +117,7 @@ class Api260260articulos_Controller extends Controller
         ];
         $this->view->respuesta = json_encode($respuesta);
         $this->view->render('api260260/articulos/borrar');
-    }
+    } //end borrar
 
     public function actualizar()
     {
@@ -142,4 +139,18 @@ class Api260260articulos_Controller extends Controller
         $this->view->respuesta = json_encode($respuesta);
         $this->view->render('api260260/articulos/crearm');
     } //end update
+
+    public function ver($param)
+    {
+        $id = $param[0];
+        $resultado = $this->model->ver($id);
+        $verboHTTP = $_SERVER['REQUEST_METHOD'];
+        $respuesta = [
+            "ArituloId" => $id,
+            "resultado" => $resultado,
+            "verboHTTP" => $verboHTTP,
+        ];
+        $this->view->respuesta = json_encode($respuesta);
+        $this->view->render('api260260/articulos/ver');
+    } // end ver
 }

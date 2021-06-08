@@ -131,4 +131,25 @@ class Api260260articulos_Model extends Model
         }
     } //end crear
 
+    public function ver($id)
+    {
+        $tieneAcceso = false;
+        try {
+            $query = $this->db->connect()->prepare('SELECT id_productos, codigo,descripcion,precio,fecha FROM productos WHERE id=:id');
+            $query->bindValue(':id', $id);
+            //$query->execute(['nombre' => $nombre]);
+            $query->execute();
+            $paswordStr = "";
+            while ($row = $query->fetch()) {
+                $paswordStr = $row['password'];
+            }
+            if ($paswordStr == $pass) {
+                $tieneAcceso = true;
+            }
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+        return $tieneAcceso;
+    } //end ver
+
 }

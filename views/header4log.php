@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="#"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="<?php echo constant('URL'); ?>consulta">Consulta</a>
+          <a class="nav-link text-light" href="<?php echo constant('URL'); ?>articulos">Articulos</a>
         </li>
 
         <li class="nav-item dropdown">

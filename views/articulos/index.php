@@ -12,8 +12,8 @@
 
     <?php require 'views/header4log.php';?>
     <?php include_once 'entidades/alumno.php';?>
-<input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
-
+<input type="text" value="<?php echo constant('URL'); ?>" id="url">
+<!--hidden -->
 <div class="container">
     <div class="row">
         <div class="col-sm">
@@ -39,7 +39,7 @@
 foreach ($this->articulos as $row) {
     $articulo = new Alumno();
     $articulo = $row;?>
-                <tr>
+                <tr id="filaart-<?php echo $articulo->id; ?>">
                     <td><?php echo $articulo->id; ?></td>
                     <td><?php echo $articulo->codigo; ?></td>
                     <td><?php echo $articulo->descripcion; ?></td>

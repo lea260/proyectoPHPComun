@@ -45,8 +45,9 @@ foreach ($this->articulos as $row) {
                     <td><?php echo $articulo->descripcion; ?></td>
                     <td><?php echo $articulo->precio; ?></td>
                     <td><?php echo $articulo->fecha; ?></td>
-                    <td><a class="btn btn-warning" href="<?php echo constant('URL') . 'consulta/verAlumno/' . $alumno->matricula; ?>">Actualizar</a></td>
-                    <td><button class="btn btn-danger" data-matricula="<?php echo $alumno->matricula; ?>">Eliminar</button></td>
+                    <td><a class="btn btn-warning" href="<?php echo constant('URL') . 'consulta/verAlumno/' . $articulo->id; ?>">Actualizar</a></td>
+                    <td><button class="btn btn-danger btnEliminar" data-alumno="<?php echo $articulo->id; ?>"
+                    id="art<?php echo $articulo->id; ?>">Eliminar</button></td>
                 </tr>
                 <?php }?>
                 </tbody>
@@ -63,7 +64,7 @@ foreach ($this->articulos as $row) {
     <!-- importo la libreria jquery-->
     <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
     <!-- importo el javascript-->
-    <script src="<?php echo constant('URL'); ?>/public/js/articulos/index.js"></script>
+    <script src="<?php echo constant('URL'); ?>/public/js/articulos/index02.js"></script>
     <!--<script src="<?php echo constant('URL'); ?>/public/js/main.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>

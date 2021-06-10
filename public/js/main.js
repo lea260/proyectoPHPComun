@@ -1,5 +1,5 @@
 
-const items = document.querySelectorAll(".bEliminar");
+const items = document.querySelectorAll(".btnEliminar");
 
 
 //jQuery, libreria escrita en javascript 

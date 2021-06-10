@@ -25,9 +25,10 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Matricula</th>
-                    <th scope="col">nombre</th>
+                    <th scope="col">descripcion</th>
                     <th scope="col">Apellido</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">fecha</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
@@ -35,14 +36,15 @@
                 <tbody>
                 <?php
 
-foreach ($this->alumnos as $row) {
-    $alumno = new Alumno();
-    $alumno = $row;?>
+foreach ($this->articulos as $row) {
+    $articulo = new Alumno();
+    $articulo = $row;?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td><?php echo $alumno->matricula; ?></td>
-                    <td><?php echo $alumno->nombre; ?></td>
-                    <td><?php echo $alumno->apellido; ?></td>
+                    <td><?php echo $articulo->id; ?></td>
+                    <td><?php echo $articulo->codigo; ?></td>
+                    <td><?php echo $articulo->descripcion; ?></td>
+                    <td><?php echo $articulo->precio; ?></td>
+                    <td><?php echo $articulo->fecha; ?></td>
                     <td><a class="btn btn-warning" href="<?php echo constant('URL') . 'consulta/verAlumno/' . $alumno->matricula; ?>">Actualizar</a></td>
                     <td><button class="btn btn-danger" data-matricula="<?php echo $alumno->matricula; ?>">Eliminar</button></td>
                 </tr>

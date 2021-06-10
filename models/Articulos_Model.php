@@ -1,6 +1,7 @@
 <?php
 
-require 'entidades/alumno.php';
+require_once 'entidades/alumno.php';
+require_once 'entidades/articulo.php';
 
 class Articulos_Model extends Model
 {
@@ -16,17 +17,15 @@ class Articulos_Model extends Model
         //$items = array();
         $items = [];
         try {
-            $query = $this->db->connect()->query('SELECT * FROM alumnos');
-
+            $query = $this->db->connect()->query('SELECT id_productos, codigo,descripcion,precio,fecha FROM productos');
             while ($row = $query->fetch()) {
-                $item = new Alumno();
-                $item->matricula = $row['matricula'];
-                $item->nombre = $row['nombre'];
-                $item->apellido = $row['apellido'];
-
-                //array_push($items, $item);
-                $items[] = $item;
-
+                $item = new Articulo();
+                $item->id = $row['id_productos'];
+                $item->codigo = $row['codigo'];
+                $item->descripcion = $row['descripcion'];
+                $item->precio = $row['precio'];
+                $item->fecha = $row['fecha'];
+                array_push($items, $item);
             }
             return $items;
         } catch (PDOException $e) {

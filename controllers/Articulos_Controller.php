@@ -10,10 +10,11 @@ class Articulos_Controller extends Controller
         $this->view->mensaje = "";
     }
 
+    //http://localhost/prophp3bj/proyectoPHPComun/articulos
     public function render()
     {
-        $alumnos = $this->model->get();
-        $this->view->alumnos = $alumnos;
+        $articulos = $this->model->get();
+        $this->view->articulos = $articulos;
         $this->view->render('articulos/index');
     }
 

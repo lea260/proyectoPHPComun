@@ -21,13 +21,13 @@ class Articulos_Controller extends Controller
 
     public function verArticulo($param = null)
     {
-        $idAlumno = $param[0];
-        $alumno = $this->model->verArticulo($idArticulo);
+        $idArticulo = $param[0];
+        $articulo = $this->model->verArticulo($idArticulo);
 
-        $_SESSION["id_verAlumno"] = $alumno->matricula;
+        $_SESSION["id_articulo"] = $idArticulo;
 
-        $this->view->alumno = $alumno;
-        $this->view->render('articulos/detalle');
+        $this->view->articulo = $articulo;
+        $this->view->render('articulos/verArticulo');
     }
 
     public function actualizarAlumno($param = null)

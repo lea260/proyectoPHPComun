@@ -1,4 +1,5 @@
 <?php
+require_once 'entidades/articulo.php';
 
 class Articulos_Controller extends Controller
 {
@@ -18,10 +19,10 @@ class Articulos_Controller extends Controller
         $this->view->render('articulos/index');
     }
 
-    public function verAlumno($param = null)
+    public function verArticulo($param = null)
     {
         $idAlumno = $param[0];
-        $alumno = $this->model->getById($idAlumno);
+        $alumno = $this->model->verArticulo($idArticulo);
 
         $_SESSION["id_verAlumno"] = $alumno->matricula;
 

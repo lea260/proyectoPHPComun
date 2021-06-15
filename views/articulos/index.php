@@ -12,7 +12,7 @@
 
     <?php require 'views/header4log.php';?>
     <?php include_once 'entidades/alumno.php';?>
-<input type="text" value="<?php echo constant('URL'); ?>" id="url">
+<input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
 <!--hidden -->
 <div class="container">
     <div class="row">
@@ -45,7 +45,7 @@ foreach ($this->articulos as $row) {
                     <td><?php echo $articulo->descripcion; ?></td>
                     <td><?php echo $articulo->precio; ?></td>
                     <td><?php echo $articulo->fecha; ?></td>
-                    <td><a class="btn btn-warning" href="<?php echo constant('URL') . 'consulta/verAlumno/' . $articulo->id; ?>">Actualizar</a></td>
+                    <td><a class="btn btn-warning" href="<?php echo constant('URL') . 'articulos/verArticulo/' . $articulo->id; ?>">Actualizar</a></td>
                     <td><button class="btn btn-danger btnEliminar" data-alumno="<?php echo $articulo->id; ?>"
                     id="art<?php echo $articulo->id; ?>">Eliminar</button></td>
                 </tr>

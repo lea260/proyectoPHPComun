@@ -32,7 +32,7 @@
           .fail(function (jqXHR, textStatus, errorThrown) { serrorFunction(); });
 
           } else {
-            console.log("entro else");
+            console.log("entro eslse");
           }
 
 

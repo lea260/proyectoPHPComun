@@ -32,13 +32,21 @@ class Articulos_Controller extends Controller
 
     public function actualizar($param = null)
     {
-        $articulo = new Articulo();
-        $articulo->id = $_POST['id'];
-        $articulo->codigo = $_POST['codigo'];
-        $articulo->descripcion = $_POST['descripcion'];
-        $articulo->precio = $_POST['precio'];
-        $articulo->fecha = $_POST['fecha'];
-        $resultado = $this->model->actualizar($articulo);
+        //var_dump($_POST);
+        $resultado = false;
+        try {
+            $articulo = new Articulo();
+            $articulo->id = $_POST['articuloId'];
+            $articulo->codigo = $_POST['codigo'];
+            $articulo->descripcion = $_POST['descripcion'];
+            $articulo->fecha = $_POST['fecha'];
+            $precioSF = $_POST['precio'];
+            $precio = floatval($precioSF);
+            $articulo->precio = number_format((float) $precio, 2, '.', '');
+            $resultado = $this->model->actualizar($articulo);
+        } catch (\Throwable $th) {
+            $resultado = false;
+        }
         $this->view->respuesta = $resultado;
         $this->view->render('articulos/actualizar');
     }

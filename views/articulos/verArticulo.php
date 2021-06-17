@@ -19,7 +19,7 @@
           <h1>Editar Articulo</h1>
         </div>
     </div>
-      <form class="row" action="<?php echo constant('URL'); ?>articulos/modificar" method="post">
+      <form id="form01" class="row" action="<?php echo constant('URL'); ?>articulos/actualizar" method="post">
       <div class="col-lg-12 col-md-12 col-sm-12">
           <label for="articuloId" class="form-label">Id</label>
           <input type="text"
@@ -67,11 +67,12 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 py-2">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button id="btnEnviarForm" type="submit" class="btn btn-success">Submit</button>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 py-2">
         <span type="submit" class="btn btn-danger" id="enviarForm">Ajax</span>
       </div>
+      <input type="hidden" value="<?php echo $this->articulo->id; ?>" id="articuloId" name="articuloId">
       </form>
     </div>
 

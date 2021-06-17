@@ -1,6 +1,6 @@
 (function($, param) {
   $(document).ready(function() {
-      alert('hola');
+      //alert('hola');
       //console.log("funciona ver articulo"); 
       
 

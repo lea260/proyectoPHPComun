@@ -68,7 +68,14 @@ class Articulos_Model extends Model
             $query->bindParam(':fecha', $articulo->fecha);
             $query->bindParam(':id', $articulo->id);
             //:descripcion, :precio, :fecha
+            //$resultado = $query->execute();
             $resultado = $query->execute();
+            $filasAf = $query->rowCount();
+            if ($filasAf == 0) {
+                $resultado = false;
+            }
+            //$str = "valor";
+            //$resultado = $query->fetch(); // return (PDOStatement) or false on failure
             //$query->close();
             return $resultado;
         } catch (PDOException $e) {

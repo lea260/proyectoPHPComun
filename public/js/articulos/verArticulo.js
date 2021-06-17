@@ -40,11 +40,19 @@
         } else {
           console.log("entro else");
         }
+    });//end enviar Form ajax
+
+    $("#btnEnviarForm").click(function(e) {
+      e.preventDefault();
+      console.log("funciona");
+      if (true){
+        $("#form01").submit();
+      }          
+    });//end enviar Form post
 
 
 
 
 
-    });//end enviar Form
   });//end ready
 })(jQuery, "hola mundo");

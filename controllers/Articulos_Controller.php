@@ -30,33 +30,17 @@ class Articulos_Controller extends Controller
         $this->view->render('articulos/verArticulo');
     }
 
-    public function actualizarAlumno($param = null)
+    public function actualizar($param = null)
     {
-        //seguridad
-        var_dump($_SESSION);
-        //por eso lo recupera, de la sesion
-
-        $matricula = $_SESSION["id_verAlumno"];
-        //$matricula = $_POST["matricula"];
-        $nombre = $_POST['nombre'];
-        $apellido = $_POST['apellido'];
-
-        //da error la segunda vez
-        //borra la variable $_SESSION['id_verAlumno']
-        //unset($_SESSION['id_verAlumno']);
-
-        if ($this->model->update(['matricula' => $matricula, 'nombre' => $nombre, 'apellido' => $apellido])) {
-            $alumno = new Alumno();
-            $alumno->matricula = $matricula;
-            $alumno->nombre = $nombre;
-            $alumno->apellido = $apellido;
-
-            $this->view->alumno = $alumno;
-            $this->view->mensaje = "Alumno actualizado correctamente";
-        } else {
-            $this->view->mensaje = "No se pudo actualizar al alumno";
-        }
-        $this->view->render('articulos/detalle');
+        $articulo = new Articulo();
+        $articulo->id = $_POST['id'];
+        $articulo->codigo = $_POST['codigo'];
+        $articulo->descripcion = $_POST['descripcion'];
+        $articulo->precio = $_POST['precio'];
+        $articulo->fecha = $_POST['fecha'];
+        $resultado = $this->model->actualizar($articulo);
+        $this->view->respuesta = $resultado;
+        $this->view->render('articulos/actualizar');
     }
 
     public function eliminarAlumno($param = null)

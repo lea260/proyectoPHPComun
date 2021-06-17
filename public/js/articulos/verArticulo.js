@@ -16,15 +16,15 @@
         "descripcion" : descripcion,
         "precio": precio,
         "fecha" : fecha}
-        console.log(objeto);
+        //console.log(objeto);
         const confirm = window.confirm("Deseas actualizar el elemento?");
         if (confirm){
-          console.log("entro if");
+          //console.log("entro if");
           //solitud ajax, 
           //$("#filaart-"+alumnoId).remove();
           let url= $("#url").val();
           let urlReq =url+"api260260articulos/actualizar";
-          console.log("url: "+urlReq);
+          //console.log("url: "+urlReq);
           let headers = {"Content-Type":"application/json;charset=utf-8"};
           let data = JSON.stringify(objeto);
           $.ajax({
@@ -33,7 +33,7 @@
             type: 'PUT',
             data: data
         })
-        .done(function (data) { console.log(data);
+        .done(function (data) { 
           console.log(data);})
         .fail(function (jqXHR, textStatus, errorThrown) { serrorFunction(); });
 

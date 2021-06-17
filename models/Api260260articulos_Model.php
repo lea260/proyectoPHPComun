@@ -129,7 +129,7 @@ class Api260260articulos_Model extends Model
         } finally {
             $pdo = null;
         }
-    } //end crear
+    } //end actualizar
 
     public function ver($id)
     {

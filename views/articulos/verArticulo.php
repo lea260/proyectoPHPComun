@@ -19,14 +19,14 @@
           <h1>Editar Articulo</h1>
         </div>
     </div>
-      <form class="row" action="<?php echo constant('URL'); ?>login/ingresar" method="post">
+      <form class="row" action="<?php echo constant('URL'); ?>articulos/modificar" method="post">
       <div class="col-lg-12 col-md-12 col-sm-12">
           <label for="articuloId" class="form-label">Id</label>
           <input type="text"
           class="form-control"
           id="articuloId"
           aria-describedby="emailHelp"
-          name="nombre"
+          name="id"
           disabled
           value="<?php echo $this->articulo->id; ?>">
       </div>
@@ -35,7 +35,7 @@
           <input type="text"
           class="form-control"
           id="articuloCodigo"
-          name="pass"
+          name="codigo"
           value="<?=$this->articulo->codigo;?>">
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -44,7 +44,7 @@
           class="form-control"
           id="articuloDescripcion"
           aria-describedby="emailHelp"
-          name="nombre"
+          name="descripcion"
           value="<?=$this->articulo->descripcion;?>">
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -53,7 +53,7 @@
           class="form-control"
           id="articuloPrecio"
           aria-describedby="emailHelp"
-          name="nombre"
+          name="precio"
           value="<?=$this->articulo->precio;?>">
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -62,7 +62,7 @@
           class="form-control"
           id="articuloFecha"
           aria-describedby="emailHelp"
-          name="nombre"
+          name="fecha"
           value="<?=$this->articulo->fecha;?>">
       </div>
 

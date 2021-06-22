@@ -12,13 +12,12 @@
         <li class="nav-item">
           <a class="nav-link text-light" href="<?php echo constant('URL'); ?>articulos">Articulos</a>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Lista
+            Listar Articulos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>pedro">Pedro</a></li>
+            <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>articulos/listar">Articulos</a></li>
             <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>axel">Axel</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>leandro">Leandro</a></li>

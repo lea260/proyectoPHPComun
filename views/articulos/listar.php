@@ -20,40 +20,29 @@
       </div><!-- end row-->
 
       <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div><!-- end card -->
-        </div><!-- end col -->
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div><!-- end card -->
-        </div><!-- end col -->
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div><!-- end card -->
-        </div><!-- end col -->
+
+      <?php foreach ($this->articulos as $key => $value) {; # code...
+
+    ?><div class="col-lg-4 col-md-6 col-sm-6 col-xs-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><?=$value->codigo;?></h5>
+          <p class="card-text"><?=$value->descripcion;?></p>
+          <p class="card-text"><?=$value->precio;?></p>
+          <input id="art-<?=$value->id;?>" class=""></p>
+          <a href="#" class="btn btn-primary">Agregar</a>
+        </div>
+      </div><!-- end card -->
+    </div><!-- end col --><?php }
+;?>
+
 
 
       </div><!-- end row -->
     </div><!-- end container-->
-    <?php //var_dump($this->articulos);;;;;;;;;;;;;;;;;?>
+    <?php //var_dump($this->articulos);;;;;;;;;;;;;;;;;;;;;;;;;;;;?>
     <?php require 'views/footer2.php';?>
 
     <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>

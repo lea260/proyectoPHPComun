@@ -10,4 +10,5 @@ class Articulo
     public $descripcion;
     public $precio;
     public $fecha;
+    public $url;
 }

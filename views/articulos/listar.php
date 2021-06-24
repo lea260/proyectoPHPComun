@@ -27,6 +27,7 @@
 
     ?><div class="col-lg-4 col-md-6 col-sm-6 col-xs-4">
       <div class="card">
+        <img class="card-img-top" src="<?=$value->url;?>" alt="Card image cap"/>
         <div class="card-body">
           <h5 class="card-title"><?=$value->codigo;?></h5>
           <p class="card-text"><?=$value->descripcion;?></p>
@@ -42,7 +43,7 @@
 
       </div><!-- end row -->
     </div><!-- end container-->
-    <?php //var_dump($this->articulos);;;;;;;;;;;;;;;;;;;;;;;;;;;;?>
+    <?php //var_dump($this->articulos);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;?>
     <?php require 'views/footer2.php';?>
 
     <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>

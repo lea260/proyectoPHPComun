@@ -25,15 +25,18 @@
 
       <?php foreach ($this->articulos as $key => $value) {; # code...
 
-    ?><div class="col-lg-4 col-md-6 col-sm-6 col-xs-4">
+    ?><div class="col-lg-4 col-md-6 col-sm-6 col-xs-4 p-3">
       <div class="card">
         <img class="card-img-top" src="<?=$value->url;?>" alt="Card image cap"/>
         <div class="card-body">
-          <h5 class="card-title"><?=$value->codigo;?></h5>
+          <h5 class="card-title">ID: <?=$value->id;?> <?=$value->codigo;?></h5>
           <p class="card-text"><?=$value->descripcion;?></p>
-          <p class="card-text"><?=$value->precio;?></p>
-          <input id="art-<?=$value->id;?>" class=""></p>
-          <a href="#" class="btn btn-primary">Agregar</a>
+          <p class="card-text">$ <?=$value->precio;?></p>
+          <input id="art-<?=$value->id;?>" class="form-control"
+          value="1" type="number"
+          ></p>
+          <button type="button" class="btn btn-primary btnAgregar"
+          data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
         </div>
       </div><!-- end card -->
     </div><!-- end col --><?php }
@@ -43,7 +46,7 @@
 
       </div><!-- end row -->
     </div><!-- end container-->
-    <?php //var_dump($this->articulos);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;?>
+    <?php //var_dump($this->articulos);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;?>
     <?php require 'views/footer2.php';?>
 
     <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>

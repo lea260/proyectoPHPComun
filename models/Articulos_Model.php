@@ -33,7 +33,7 @@ class Articulos_Model extends Model
                 } else {
                     $item->url = $urlDefecto;
                 }
-                $item->url = isset($row['url']) ? $row['url'] : $urlDefecto;
+                //$item->url = isset($row['url']) ? $row['url'] : $urlDefecto;
                 array_push($items, $item);
             }
             return $items;

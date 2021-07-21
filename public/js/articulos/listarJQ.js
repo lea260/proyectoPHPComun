@@ -2,11 +2,12 @@
   $(document).ready(function() {
       //alert('hola');
       //console.log("funciona ver articulo");
+      alert("litarJQ")
       let $listaArticulos=[];
       let url= $("#url").val();
       let urlReq =url+"api260260articulos/listar";
-      console.log("url: "+urlReq);
-      console.log(param);
+      //console.log("url: "+urlReq);
+      //console.log(param);
       let headers = {"Content-Type":"application/json;charset=utf-8"}; 
       let data = {};
             $.ajax({
@@ -22,15 +23,16 @@
           .fail(function (jqXHR, textStatus, errorThrown) { serrorFunction(); });
 
           //asiganr la funcionalidad del carrito
-          const items = document.querySelectorAll(".btnAgregar");
-          items.forEach(item => {
-          item.addEventListener("click", function(){          
+          //const items = $(".btnAgregar");
+          $(".btnAgregar").each(function(index) {            
+          $(this).on("click", function(){        
+            //console.log("hola");
             let articuloId = this.dataset.articuloId;
-            //console.log(articuloId);
+            console.log(articuloId);
             let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);
-            console.log(JSON.stringify(articulo));            
+            //console.log(JSON.stringify(articulo));            
             carrito = JSON.parse(localStorage.getItem("carrito"));
-            console.log("carrito: "+ carrito);
+            //console.log("carrito: "+ carrito);
             if (carrito==null){
               //inicilizo el carrito
               //agrego el elememto al carrito
@@ -39,7 +41,7 @@
               if (cantidadAux>=1){
                 cantidad = cantidadAux;
               }
-              console.log("cantidad:" + cantidad);
+              //console.log("cantidad:" + cantidad);
               carrito=[];
               console.log();
               item={"id" : articulo.id,
@@ -54,13 +56,13 @@
               if (cantidadAux>=1){
                 cantidad = cantidadAux;
               }
-              console.log("cantidad:" + cantidad);              
-              console.log();
+              //console.log("cantidad:" + cantidad);              
+              //console.log();
               item={"id" : articulo.id,
                      "precio": articulo.precio,
                       "cantidad": cantidad}
               let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
-              console.log("itemCarrito: "+itemCarrito);
+              //console.log("itemCarrito: "+itemCarrito);
               if (itemCarrito==undefined){
                 carrito.push(item);
                 localStorage.setItem("carrito", JSON.stringify(carrito));              

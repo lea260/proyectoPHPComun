@@ -2,7 +2,7 @@
   $(document).ready(function() {
       //alert('hola');
       //console.log("funciona ver articulo");
-      alert("litarJQ")
+      alert("litarJQ");
       let $listaArticulos=[];
       let url= $("#url").val();
       let urlReq =url+"api260260articulos/listar";
@@ -27,7 +27,8 @@
           $(".btnAgregar").each(function(index) {            
           $(this).on("click", function(){        
             //console.log("hola");
-            let articuloId = this.dataset.articuloId;
+            //let articuloId = this.dataset.articuloId;
+            let articuloId = $(this).data("articuloId");
             console.log(articuloId);
             let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);
             //console.log(JSON.stringify(articulo));            

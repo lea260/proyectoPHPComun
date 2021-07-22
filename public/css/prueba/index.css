@@ -1,0 +1,23 @@
+#hola {
+  background-color: yellow;
+}
+p.colorRojo {
+  color: red;
+}
+.hola.como {
+  color: blueviolet;
+}
+div.container p {
+  background-color: chartreuse;
+}
+div.cont02 > p {
+  background-color: darkgreen;
+}
+
+div.padre ~ p {
+  background-color: gold;
+}
+
+div.padre02 + p {
+  background-color: grey;
+}

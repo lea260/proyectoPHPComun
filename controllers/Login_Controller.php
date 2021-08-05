@@ -37,8 +37,11 @@ class Login_Controller extends Controller
     }
     public function salir()
     {
-        $_SESSION["estalogueado"] = false;
+        //$_SESSION["estalogueado"] = false;
+        unset($_SESSION["estalogueado"]);
         unset($_SESSION["nombre"]);
+        session_destroy();
         $this->view->render('index/index');
+
     }
 }

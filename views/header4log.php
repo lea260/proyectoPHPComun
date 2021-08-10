@@ -24,7 +24,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="" >Carrito</a>
+          <a class="nav-link text-light" href="<?php echo constant('URL'); ?>carrito" >Carrito</a>
         </li>
 
 

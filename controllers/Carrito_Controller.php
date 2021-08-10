@@ -1,7 +1,7 @@
 <?php
 require_once 'entidades/articulo.php';
 
-class Carrito__Controller extends Controller
+class Carrito_Controller extends Controller
 {
     public function __construct()
     {

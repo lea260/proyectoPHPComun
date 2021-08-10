@@ -11,12 +11,12 @@ class Carrito__Controller extends Controller
         $this->view->mensaje = "";
     }
 
-    //http://localhost/prophp3bj/proyectoPHPComun/articulos
+    //http://localhost/prophp3bj/proyectoPHPComun/carrito
     public function render()
     {
         //$articulos = $this->model->get();
         //$this->view->articulos = $articulos;
-        $this->view->render('articulos/index');
+        $this->view->render('carrito/index');
     }
 
 }

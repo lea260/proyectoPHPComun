@@ -48,8 +48,9 @@
               item={"id" : articulo.id,
                      "precio": articulo.precio,
                       "cantidad": cantidad}
-              carrito.push(item);
+              carrito.push(item);              
               localStorage.setItem("carrito", JSON.stringify(carrito));
+              $("#cantidadElemCarrito").text(carrito.length);
             } else{
               //ya tienen por lo menos un item
               let cantidadAux= $("#art-"+articuloId).val();
@@ -66,7 +67,8 @@
               //console.log("itemCarrito: "+itemCarrito);
               if (itemCarrito==undefined){
                 carrito.push(item);
-                localStorage.setItem("carrito", JSON.stringify(carrito));              
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+                $("#cantidadElemCarrito").text(carrito.length);
               } 
               
             }

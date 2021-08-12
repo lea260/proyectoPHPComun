@@ -1,5 +1,9 @@
 (function($, param) {
   $(document).ready(function() {
+
+    console.log(param);
+    
+    
       //alert('hola');
       //console.log("funciona ver articulo");
       //alert("litarJQ");
@@ -83,4 +87,4 @@
 
 
   });//end ready
-})(jQuery, "hola mundo");
+})(jQuery, JSON.parse(localStorage.getItem("carrito")));

@@ -36,7 +36,7 @@
 
     <?php require 'views/footer2.php';?>
 
-    <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
+
     <!-- importo el javascript-->
     <script src="<?php echo constant('URL'); ?>/public/js/articulos/actualizar.js"></script>
     <!--<script src="<?php echo constant('URL'); ?>/public/js/main.js"></script> -->

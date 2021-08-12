@@ -28,8 +28,7 @@
       Carrito
       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
       id="cantidadElemCarrito">
-        0
-
+      0
       </span>
       </button>
       </a>
@@ -58,3 +57,4 @@ if ($estaLogueado) {
     </div>
   </div>
 </nav>
+

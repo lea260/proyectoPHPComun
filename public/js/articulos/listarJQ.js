@@ -2,7 +2,7 @@
   $(document).ready(function() {
       //alert('hola');
       //console.log("funciona ver articulo");
-      alert("litarJQ");
+      //alert("litarJQ");
       let $listaArticulos=[];
       let url= $("#url").val();
       let urlReq =url+"api260260articulos/listar";

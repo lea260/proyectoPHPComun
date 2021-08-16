@@ -1,6 +1,6 @@
 (function($) {
   $(document).ready(function() {
-      alert('hola');
+      //alert('hola');
       //console.log("funciona ver articulo"); 
       let carrito = JSON.parse(localStorage.getItem("carrito"))
       console.log("probando");

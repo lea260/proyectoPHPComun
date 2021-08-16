@@ -33,6 +33,8 @@
             //console.log("hola");
             //let articuloId = this.dataset.articuloId;
             let articuloId = $(this).data("articuloId");
+            let articuloDescripcion = $(this).data("articuloDescripcion");
+            let articuloCodigo = $(this).data("articuloCodigo");
             console.log(articuloId);
             let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);
             //console.log(JSON.stringify(articulo));            
@@ -51,6 +53,8 @@
               console.log();
               item={"id" : articulo.id,
                      "precio": articulo.precio,
+                     "descripcion": articuloDescripcion,
+                     "codigo": articuloCodigo,
                       "cantidad": cantidad}
               carrito.push(item);              
               localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -66,6 +70,8 @@
               //console.log();
               item={"id" : articulo.id,
                      "precio": articulo.precio,
+                     "descripcion": articuloDescripcion,
+                     "codigo": articuloCodigo,
                       "cantidad": cantidad}
               let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
               //console.log("itemCarrito: "+itemCarrito);

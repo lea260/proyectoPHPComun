@@ -19,6 +19,7 @@
         </div><!-- end col-->
       </div><!-- end row-->
       <div class="row">
+        <div id="carritoid"></div>
 
 
 

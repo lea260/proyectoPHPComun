@@ -22,16 +22,21 @@ class Login_Controller extends Controller
     public function ingresar()
     {
         $key = "example_key";
+        $iat = time();
         $payload = array(
-            "iss" => "http://example.org",
-            "aud" => "http://example.com",
-            "iat" => 1356999524,
-            "nbf" => 1357000000,
+            "iss" => constant('URL'),
+            "aud" => constant('URL'),
+            "iat" => $iat,
+            "nbf" => $iat,
+            "exp" => $iat + 30,
         );
         $jwt = JWT::encode($payload, $key);
+
         $decoded = JWT::decode($jwt, $key, array('HS256'));
 
         print_r($jwt);
+        echo "</br>";
+        print_r((array) $decoded);
 
 /*
 NOTE: This will now be an object instead of an associative array. To get

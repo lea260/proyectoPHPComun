@@ -10,11 +10,13 @@
           <a class="nav-link active" aria-current="page" href="#"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="<?php echo constant('URL'); ?>articulos">Articulos</a>
+          <a class="nav-link text-light" href="<?php echo constant('URL'); ?>articulos">
+          <button type="button" class="btn btn-primary position-relative">Articulos</button>
+          </a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Listar Articulos
+          <button type="button" class="btn btn-primary position-relative">Listar Articulos</button>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>articulos/listar">Articulos</a></li>

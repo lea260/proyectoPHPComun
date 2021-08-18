@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 use Firebase\JWT\JWT;
 
 class Login_Controller extends Controller
@@ -28,8 +28,9 @@ class Login_Controller extends Controller
             "aud" => constant('URL'),
             "iat" => $iat,
             "nbf" => $iat,
-            "exp" => $iat + 30,
+            "exp" => $iat + 60 * 60,
         );
+
         $jwt = JWT::encode($payload, $key);
 
         $decoded = JWT::decode($jwt, $key, array('HS256'));

@@ -1,5 +1,7 @@
 <?php
 require_once 'entidades/articulo.php';
+require_once 'vendor/autoload.php';
+use Firebase\JWT\JWT;
 
 class Api260260articulos_Controller extends Controller
 {
@@ -31,12 +33,30 @@ class Api260260articulos_Controller extends Controller
     public function listar()
     {
 
-        $listaArticulos = $this->model->listar();
-        $respuesta = [
-            "datos" => $listaArticulos,
-            "totalResultados" => count($listaArticulos),
-        ];
-        $this->view->respuesta = json_encode($respuesta);
+        try {
+            $key = "example_key";
+            //code...
+            $headers = apache_request_headers();
+            $tokenAux = $headers['Authorization'];
+            $token = substr($tokenAux, 7, strlen($tokenAux));
+            $decoded = JWT::decode($token, $key, array('HS256'));
+            $listaArticulos = $this->model->listar();
+            $respuesta = [
+                "datos" => $listaArticulos,
+                "totalResultados" => count($listaArticulos),
+                "token" => $token,
+                "decoded" => $decoded,
+            ];
+            $this->view->respuesta = json_encode($respuesta);
+        } catch (\Throwable $th) {
+            //throw $th;
+            $respuesta = [
+                "datos" => [],
+                "totalResultados" => 0,
+                "token" => $token,
+            ];
+            $this->view->respuesta = json_encode($respuesta);
+        }
 
         $this->view->render('api260260/articulos/listar');
         //var_dump($this);
@@ -121,6 +141,7 @@ class Api260260articulos_Controller extends Controller
 
     public function actualizar()
     {
+
         $json = file_get_contents('php://input');
         $obj = json_decode($json);
         $articulo = new Articulo();

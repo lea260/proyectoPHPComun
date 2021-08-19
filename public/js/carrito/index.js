@@ -2,10 +2,10 @@
   $(document).ready(function() {
       //alert('carrito');
       let carrito = JSON.parse(localStorage.getItem("carrito"));
-      $("#carrito").text(carrito.length);
+      //$("#carrito").text(carrito.length);
       carrito.forEach(element => {
         let insert = `<button type="button" class="btn btn-primary">${element.id}</button>` 
-        let insert02 = `<div class="col-lg-4 col-md-6 col-sm-6 col-xs-4 p-3">
+        /*let insert02 = `<div class="col-lg-4 col-md-6 col-sm-6 col-xs-4 p-3">
         <div class="card">
           <img class="card-img-top" src="<?=$value->url;?>" alt="Card image cap"/>
           <div class="card-body">
@@ -23,7 +23,7 @@
           </div>
           </div><!-- end card -->
         </div><!-- end col --><?php }`
-        $("#carritoid").after(insert02);
+        $("#carritoid").after(insert02);*/
       });
       /*for (let index = 0; index < array.length; index++) {
 

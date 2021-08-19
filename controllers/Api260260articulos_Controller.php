@@ -51,7 +51,7 @@ class Api260260articulos_Controller extends Controller
         } catch (\Throwable $th) {
             //throw $th;
             $respuesta = [
-                "datos" => [],
+                "datos" => "error al ingresar",
                 "totalResultados" => 0,
                 "token" => $token,
             ];

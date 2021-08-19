@@ -43,13 +43,14 @@
         </div>
       </div><!-- end card -->
     </div><!-- end col --><?php }
+
 ;?>
 
 
 
       </div><!-- end row -->
     </div><!-- end container-->
-    <?php //var_dump($this->articulos);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;?>
+    <?php //var_dump($this->articulos);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;?>
     <?php require 'views/footer2.php';?>
 
 

@@ -1,7 +1,6 @@
 <?php
 require_once 'entidades/articulo.php';
 require_once 'vendor/autoload.php';
-use Firebase\JWT\JWT;
 
 class Api260260articulos_Controller extends Controller
 {
@@ -34,18 +33,16 @@ class Api260260articulos_Controller extends Controller
     {
 
         try {
-            $key = "example_key";
+            //$key = "example_key";
             //code...
-            $headers = apache_request_headers();
+            /*$headers = apache_request_headers();
             $tokenAux = $headers['Authorization'];
             $token = substr($tokenAux, 7, strlen($tokenAux));
-            $decoded = JWT::decode($token, $key, array('HS256'));
+            $decoded = JWT::decode($token, $key, array('HS256'));*/
             $listaArticulos = $this->model->listar();
             $respuesta = [
                 "datos" => $listaArticulos,
                 "totalResultados" => count($listaArticulos),
-                "token" => $token,
-                "decoded" => $decoded,
             ];
             $this->view->respuesta = json_encode($respuesta);
         } catch (\Throwable $th) {

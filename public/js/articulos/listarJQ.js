@@ -1,8 +1,13 @@
-(function($, param) {
+(function($) {
   $(document).ready(function() {
 
-    console.log(param);
-    
+    //console.log(param);
+    let carritoStr = localStorage.getItem("carrito");
+    let carrito;
+    if (carritoStr){
+      carrito = JSON.parse(carritoStr);
+      log('ENTRO AL a');
+    }
     
       //alert('hola');
       //console.log("funciona ver articulo");
@@ -22,9 +27,10 @@
           })
           .done(function (data) { 
             $listaArticulos=data.datos;
+            console.log(data);
             //console.log($listaArticulos);
            })
-          .fail(function (jqXHR, textStatus, errorThrown) { serrorFunction(); });
+          .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });
 
           //asiganr la funcionalidad del carrito
           //const items = $(".btnAgregar");
@@ -93,4 +99,4 @@
 
 
   });//end ready
-})(jQuery, JSON.parse(localStorage.getItem("carrito")));
+})(jQuery);

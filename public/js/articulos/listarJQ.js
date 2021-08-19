@@ -6,7 +6,7 @@
     let carrito;
     if (carritoStr){
       carrito = JSON.parse(carritoStr);
-      log('ENTRO AL a');
+      console.log("ento");
     }
     
       //alert('hola');
@@ -61,7 +61,9 @@
                      "precio": articulo.precio,
                      "descripcion": articuloDescripcion,
                      "codigo": articuloCodigo,
-                      "cantidad": cantidad}
+                      "cantidad": cantidad,
+                    "url": articulo.url
+                  }
               carrito.push(item);              
               localStorage.setItem("carrito", JSON.stringify(carrito));
               $("#cantidadElemCarrito").text(carrito.length);
@@ -78,7 +80,10 @@
                      "precio": articulo.precio,
                      "descripcion": articuloDescripcion,
                      "codigo": articuloCodigo,
-                      "cantidad": cantidad}
+                      "cantidad": cantidad,
+                      "url": articulo.url
+                    
+                    }
               let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
               //console.log("itemCarrito: "+itemCarrito);
               if (itemCarrito==undefined){

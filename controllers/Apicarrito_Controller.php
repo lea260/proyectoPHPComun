@@ -14,14 +14,14 @@ class Apicarrito_Controller extends Controller
     public function completarCarrito()
     {
 
-        $listaArticulos = $this->model->listar();
+        $listaArticulos = [];
         $respuesta = [
             "datos" => $listaArticulos,
             "totalResultados" => count($listaArticulos),
         ];
         $this->view->respuesta = json_encode($respuesta);
 
-        $this->view->render('api/articulos/completarCarrito');
+        $this->view->render('api/carrito/completarcarrito');
         //var_dump($this);
         //var_dump($this->view);
         //$this->view->render('apilea/articulos/index');

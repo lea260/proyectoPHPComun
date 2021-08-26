@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "3fce11b5-7f4c-4fc1-a7ef-f5dd7e18afc5",
+		"name": "Apicarrito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "completar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/prophp3bj/proyectoPHPComun/Apicarritocompletarcarrito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"prophp3bj",
+						"proyectoPHPComun",
+						"Apicarritocompletarcarrito"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

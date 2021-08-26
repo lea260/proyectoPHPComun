@@ -10,7 +10,7 @@ class Apicarrito_Controller extends Controller
 
     }
 
-    //localahost/prophp3bj/proyectoPHPComun/Apicarritocompletarcarrito
+    //localhost/prophp3bj/proyectoPHPComun/Apicarrito/completarcarrito
     public function completarcarrito()
     {
         $listaArticulos = [];

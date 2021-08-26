@@ -21,7 +21,7 @@ class Apicarrito_Controller extends Controller
         ];
         $this->view->respuesta = json_encode($respuesta);
 
-        $this->view->render('api/completarcarrito');
+        $this->view->render('api/carrito/completarcarrito');
         //var_dump($this);
         //var_dump($this->view);
         //$this->view->render('apilea/articulos/index');

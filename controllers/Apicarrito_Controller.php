@@ -26,11 +26,10 @@ class Apicarrito_Controller extends Controller
             array_push($lista, $articulo);
         }
         $respuesta = [
-            "datos" => $lista,
+            "datos" => $listaArticulos,
             "totalResultados" => count($listaArticulos),
         ];
         $this->view->respuesta = json_encode($respuesta);
-
         $this->view->render('api/carrito/completarcarrito');
         //var_dump($this);
         //var_dump($this->view);

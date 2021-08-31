@@ -15,7 +15,8 @@ class Apicarrito_Controller extends Controller
     {
         $json = file_get_contents('php://input');
         //convierto en un array asociativo de php
-        $listaArticulos = json_decode($json);
+        $datos = json_decode($json);
+        $listaArticulos = $datos->lista;
         $lista = [];
         foreach ($listaArticulos as $key => $obj) {
             $articulo = new Carrito();

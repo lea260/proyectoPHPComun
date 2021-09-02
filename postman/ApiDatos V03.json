@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "21a39398-bf20-4982-be90-6488d436f339",
+		"name": "Apicarrito V03",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "completar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"lista\": [ {\r\n    \"id\": 1,\r\n    \"cantidad\": 10,\r\n    \"precio\": 25.00\r\n    },\r\n    {\r\n    \"id\": 2,\r\n    \"cantidad\": 10,\r\n    \"precio\": 25.00\r\n    }],\r\n    \"usuario\": 1\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/prophp3bj/proyectoPHPComun/Apicarrito/completarcarrito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"prophp3bj",
+						"proyectoPHPComun",
+						"Apicarrito",
+						"completarcarrito"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

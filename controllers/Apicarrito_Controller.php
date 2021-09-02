@@ -10,13 +10,14 @@ class Apicarrito_Controller extends Controller
 
     }
 
-    //localahost/prophp3bj/proyectoPHPComun/Api260260articulos
+    //localhost/prophp3bj/proyectoPHPComun/Apicarrito/completarcarrito
     public function completarcarrito()
     {
         $json = file_get_contents('php://input');
         //convierto en un array asociativo de php
-        $listaArticulos = json_decode($json);
-        $lista = [];
+        $jsonDecode = json_decode($json);
+        $listaArticulos = $jsonDecode->lista;
+        //$lista = $lista->;
         foreach ($listaArticulos as $key => $obj) {
             $articulo = new Carrito();
             $articulo->id = $obj->id;
@@ -25,11 +26,13 @@ class Apicarrito_Controller extends Controller
             //$lista[] = $articulo;
             array_push($lista, $articulo);
         }
+        $listaArticulos = [];
         $respuesta = [
-            "datos" => $listaArticulos,
+            "datos" => $lista,
             "totalResultados" => count($listaArticulos),
         ];
         $this->view->respuesta = json_encode($respuesta);
+
         $this->view->render('api/carrito/completarcarrito');
         //var_dump($this);
         //var_dump($this->view);
@@ -37,4 +40,5 @@ class Apicarrito_Controller extends Controller
         //var_dump($this);
         //var_dump($this->view);
     }
+
 }

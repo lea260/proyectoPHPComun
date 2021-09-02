@@ -39,7 +39,7 @@ class Api260260articulos_Model extends Model
     public function crear($articulo)
     {
 
-        $pdo = $query = $this->db->connect();
+        $pdo = $this->db->connect();
         try {
             $query = $pdo->prepare('insert into productos (codigo, descripcion,precio, fecha) values (:codigo, :descripcion, :precio, :fecha)');
             $query->bindParam(':codigo', $articulo->codigo);
@@ -66,7 +66,7 @@ class Api260260articulos_Model extends Model
     public function crearm($lista)
     {
 
-        $pdo = $query = $this->db->connect();
+        $pdo = $this->db->connect();
         try {
             $query = $pdo->prepare('insert into productos (codigo, descripcion,precio, fecha) values (:codigo, :descripcion, :precio, :fecha)');
             foreach ($lista as $key => $articulo) {

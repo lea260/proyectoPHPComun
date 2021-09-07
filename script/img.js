@@ -5,8 +5,8 @@
 <script>
 $(document).ready(function(){
   $("input").change(function(e){
-    var let = e.target;
-    var let = new FileReader();
+    let input = e.target;
+    let reader = new FileReader();
     reader.onload = function(){
       var dataURL = reader.result;
       console.log(dataURL);

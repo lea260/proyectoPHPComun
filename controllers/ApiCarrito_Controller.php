@@ -16,8 +16,9 @@ class Apicarrito_Controller extends Controller
         //obtengo los datos de la peticion http, post body
         $json = file_get_contents('php://input');
         //convierto en un array asociativo de php
-        $listaArticulos = json_decode($json);
+        $jsonDecode = json_decode($json);
         $lista = [];
+        $listaArticulos = $jsonDecode->lista;
         foreach ($listaArticulos as $key => $obj) {
             $articulo = new Carrito();
             //atributos publicos

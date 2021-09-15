@@ -53,6 +53,7 @@
                 
                 
                 
+                
               }
               $("#cantidadElemCarrito").text(carrito.length);
           });
@@ -87,7 +88,11 @@
               localStorage.setItem("carrito", JSON.stringify([]));
               $("#cantidadElemCarrito").text(0);
               
+              $("#itemsCarrito").html(`<div id="carritoid"></div>`);
               console.log(data.resultado);
+              $("#numPedido").text(data.resultado)
+              //$("#resPedido").css( {"display":"block"});
+              $("#resPedido").css("display","block");
               //console.log($listaArticulos);
             })
             .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });

@@ -18,11 +18,8 @@
           <h1>Lista del carrito</h1>
         </div><!-- end col-->
       </div><!-- end row-->
-      <div class="row">
+      <div class="row" id="itemsCarrito">
         <div id="carritoid"></div>
-
-
-
 
 
       </div><!-- end row -->
@@ -31,12 +28,21 @@
         <button class="btn btn-success" id="btnCompletarCarrito">completar carrito</button>
       </div>
 
+      <div class="row" id="resPedido" style="display:none">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h1>Resultado del pedido</h1>
+            <div class="alert alert-success" role="alert">
+              pedido completado con exito <span id="numPedido"></span>
+            </div>
+        </div><!-- end col-->
+      </div><!-- end row-->
 
 
 
 
-      </div><!-- end row -->
-    </div><!-- end container-->
+
+
+
 
     <?php require 'views/footer2.php';?>
 

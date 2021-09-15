@@ -14,8 +14,22 @@
       }
       return input
     }     
+      function formatoFecha(fecha, formato) {
+        const map = {
+            dd: agregarCero(fecha.getDate()),
+            mm: agregarCero(fecha.getMonth()),
+            yy: agregarCero(fecha.getFullYear().toString().slice(-2)),
+            yyyy: agregarCero(fecha.getFullYear()),
+            h: agregarCero(fecha.getHours()),
+            m: agregarCero(fecha.getMinutes())
+        }
+    
+        return formato.replace(/dd|mm|yyyy|h|m/gi, matched => map[matched])
+    }
+    //const d = new Date(2018, 11, 24, 10, 33, 30, 0);
+    //document.getElementById("demo").innerHTML = formatoFecha(d, "dd-mm-yyyy h:m");
 
-    function formatoFecha(fecha) {      
+    /*function formatoFecha(fecha) {      
       let salida = fecha.getFullYear();
       salida+="-";
       let mes = agregarCero(fecha.getMonth());
@@ -31,7 +45,7 @@
       salida +=minutos;
       //fecha.getHours+fecha.ge
       return salida;
-    }    
+    }    */
       //console.log("funciona ver articulo"); 
       /*var n = d.getTimezoneOffset();
       var fecha = new Date(2021,0,4,12,30);
@@ -41,7 +55,7 @@
       $(".fecha").each(function(index) { 
           let fecha = $(this).text();          
           let horaLocal =convertUTCDateToLocalDate(new Date(fecha));          
-          $(this).text(formatoFecha(horaLocal));          
+          $(this).text(formatoFecha(horaLocal,"dd-mm-yyyy h:m"));          
         })
       
   });//end ready

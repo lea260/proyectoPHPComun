@@ -50,6 +50,22 @@
       }          
     });//end enviar Form post
 
+    //previsualizacion de la imagen
+    $("input[type=file]").change(function(e){
+      let input = e.target;
+      let reader = new FileReader();
+      reader.onload = function(){
+        var dataURL = reader.result;
+        console.log(dataURL);
+        //var output = document.getElementById('output');
+        //output.src = dataURL;
+        //$("#imgP").html("<img src='" +dataURL+ "' />");
+        $("#imgP").html(`<img src="${dataURL}" width="50%"/>`);
+      };
+      reader.readAsDataURL(input.files[0]);
+    });
+
+
 
 
 

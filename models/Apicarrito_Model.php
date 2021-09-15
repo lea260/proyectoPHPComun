@@ -37,7 +37,7 @@ class Apicarrito_Model extends Model
             foreach ($lista as $key => $articulo) {
                 # code...
                 $query->bindParam(':articulo_id', $articulo->id);
-                $query->bindParam(':cantidad', $articulo->id);
+                $query->bindParam(':cantidad', $articulo->cantidad);
                 $query->bindParam(':precio', $articulo->precio);
                 $query->bindParam(':pedido_id', $lastInsertId);
                 $query->execute();

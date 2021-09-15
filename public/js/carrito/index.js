@@ -61,8 +61,41 @@
            
           }
         }
+      }); //end body
 
-      });
+      //http://localhost/prophp3bj/proyectoPHPComun/Apicarrito/completarCarrito
+      $("#btnCompletarCarrito").on("click",function(){
+        
+        let url= $("#url").val();
+        let urlReq =url+"Apicarrito/completarCarrito";
+        //console.log(urlReq);
+        //console.log("url: "+urlReq);
+        //console.log(param);
+        
+        let headers = {"Content-Type":"application/json;charset=utf-8"}; 
+        let data = {"lista": carrito,
+                    "usuario": 1 };
+              $.ajax({
+                url: urlReq,
+                headers: headers,
+                type: 'POST',
+                data: JSON.stringify(data)
+            })
+            .done(function (data) {              
+              //pedido agregado con exito
+
+              localStorage.setItem("carrito", JSON.stringify([]));
+              $("#cantidadElemCarrito").text(0);
+              
+              console.log(data.resultado);
+              //console.log($listaArticulos);
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });
+        });//end btnCompletarCarrito
+
+
+
+
       
   });  
 })(jQuery);

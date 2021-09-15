@@ -26,6 +26,16 @@
 
 
       </div><!-- end row -->
+      <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 p-4">
+        <button class="btn btn-success" id="btnCompletarCarrito">completar carrito</button>
+      </div>
+
+
+
+
+
+      </div><!-- end row -->
     </div><!-- end container-->
 
     <?php require 'views/footer2.php';?>

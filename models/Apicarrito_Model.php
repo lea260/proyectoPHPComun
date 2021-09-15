@@ -21,7 +21,7 @@ class Apicarrito_Model extends Model
         $pdo->beginTransaction();
         //'2021-09-23 16:27:40')
         try {
-            $fecha = date('Y-m-d h:i:s', time());
+            $fecha = date('Y-m-d H:i:s', time());
             $query = $pdo->prepare('insert into pedido (usuario_id, fecha) VALUES (:idUsuario, :fecha)');
             $query->bindParam(':idUsuario', $usuario);
             $query->bindParam(':fecha', $fecha);

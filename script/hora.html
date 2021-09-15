@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the timedifference between UTC and local time.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var d = new Date();
+  var d = new Date();
+  var n = d.getTimezoneOffset();
+  var fecha = new Date(2021,0,4,12,30);
+  var ms = fecha.getTime();
+  var fecha02 = new Date(ms-n*60*1000);
+  document.getElementById("demo").innerHTML = fecha02;
+  
+}
+
+</script>
+
+</body>
+</html>

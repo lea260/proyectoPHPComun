@@ -17,7 +17,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-        <h1>Sección de consulta</h1>
+        <h1>Sección de pedidos</h1>
     </div>
     <div class="row">
         <div class="col-sm">

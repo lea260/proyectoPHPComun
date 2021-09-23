@@ -1,5 +1,14 @@
 <?php
 
+include_once 'traduccion/Translate.php';
+use \SimpleTranslation\Translate;
+
+//require_once 'config/config.php';
+
+/*manejo de ccookies */
+//var_dump(constant('URL'));
+Translate::init('es', "lang/es.php");
+
 class Controller
 {
     public $model;

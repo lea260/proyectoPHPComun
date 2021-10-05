@@ -68,7 +68,7 @@ class Articulos_Model extends Model
     {
 
         $resultado = false;
-        $pdo = $query = $this->db->connect();
+        $pdo = $this->db->connect();
         try {
             $query = $pdo->prepare('UPDATE productos SET codigo=:codigo, descripcion=:descripcion, precio= :precio, fecha= :fecha WHERE id_productos= :id');
             $query->bindParam(':codigo', $articulo->codigo);

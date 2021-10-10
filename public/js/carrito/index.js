@@ -1,6 +1,16 @@
 (function($) {
   $(document).ready(function() {
       //alert('carrito');
+      let tokenStr = localStorage.getItem("token");
+      let token = "defecto  valor"; 
+      if (tokenStr){
+        token = tokenStr
+      }
+      $.ajaxSetup({
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
       let carrito = JSON.parse(localStorage.getItem("carrito"));
       //$("#carrito").text(carrito.length);
       carrito.forEach(element => {
@@ -69,11 +79,11 @@
         
         let url= $("#url").val();
         let urlReq =url+"Apicarrito/completarCarrito";
-        //console.log(urlReq);
-        //console.log("url: "+urlReq);
-        //console.log(param);
         
-        let headers = {"Content-Type":"application/json;charset=utf-8"}; 
+        //$token = localStorage.getItem('token');
+        let headers = {'Content-Type':'application/json;charset=utf-8'}
+                        //'Authorization': `Bearer ${token}`}; 
+        
         let data = {"lista": carrito,
                     "usuario": 1 };
               $.ajax({
@@ -84,7 +94,7 @@
             })
             .done(function (data) {              
               //pedido agregado con exito
-
+              console.log(data);
               localStorage.setItem("carrito", JSON.stringify([]));
               $("#cantidadElemCarrito").text(0);
               

@@ -1,5 +1,6 @@
 <?php require_once 'traduccion/Translate.php';
 use \SimpleTranslation\Translate;?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary ps-5">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo constant('URL'); ?>index"><?=Translate::__('home');?></a>

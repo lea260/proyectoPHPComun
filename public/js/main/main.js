@@ -6,6 +6,6 @@
       //console.log("probando");
       if (carrito){
         $("#cantidadElemCarrito").text(carrito.length);
-      }
+      }      
   });//end ready
 })(jQuery);

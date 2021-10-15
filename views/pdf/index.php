@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php require 'views/header2.php';?>
+    <?php require 'views/header4log.php';?>
     <div class="container">
     <div class="row">
         <div class="col-sm">
@@ -19,14 +19,14 @@
         <div class="col-sm">
             <h1>Pdf</h1>
             <a class="" href="<?php echo constant('URL'); ?>pdf/generar">generar pdf</a>
+            <br/>
+            <a class="" href="<?php echo constant('URL'); ?>pdf/generarPdf02">generar pdf</a>
         </div>
     </div>
 
     </div>
     <?php require 'views/footer2.php';?>
-    <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <script src="<?php echo constant('URL'); ?>/public/js/login/index.js"></script>
 </body>
 </html>
 

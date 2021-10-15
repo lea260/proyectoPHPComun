@@ -26,4 +26,12 @@ class Pdf_Controller extends Controller
         //var_dump($this->view);
     }
 
+    public function generarPdf02()
+    {
+        //$this->view->articulos = $this->model->get();
+        $this->view->render('pdf/generarPdf02');
+        //var_dump($this);
+        //var_dump($this->view);
+    }
+
 }

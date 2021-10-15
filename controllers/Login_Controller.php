@@ -28,12 +28,12 @@ class Login_Controller extends Controller
             $token = Auth::SignIn([
                 'id' => 1,
                 'name' => $nombre,
-                'role' => 'admin',
+                'role' => 'cliente',
             ]);
             $this->view->token = $token;
             $_SESSION["estalogueado"] = true;
             $_SESSION["nombre"] = $nombre;
-            $_SESSION["rol"] = "admin";
+            $_SESSION["rol"] = "cliente";
             $this->view->render('login/ingresar');
         } else {
             $this->view->resultadoLogin = "usuario o contraseña incorrectos";

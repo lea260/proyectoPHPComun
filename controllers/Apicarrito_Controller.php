@@ -21,7 +21,7 @@ class Apicarrito_Controller extends Controller
 
             Auth::Check($token);
             $role = Auth::GetData($token)->role;
-            if ($role != 'usuario') {
+            if ($role != 'cliente') {
                 throw new Exception("no tiene autorizacion");
             }
 

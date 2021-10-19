@@ -80,6 +80,7 @@ class Articulos_Controller extends Controller
         $this->view->articulos = $articulos;
         //lista los articulos
         $this->view->render('articulos/listar');
+        $arr = array();
     }
 
 }

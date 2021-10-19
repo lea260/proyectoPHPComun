@@ -6,6 +6,15 @@
       //console.log("probando");
       if (carrito){
         $("#cantidadElemCarrito").text(carrito.length);
-      }      
+      }
+      let idioma = Cookies.get('idioma');   
+      let idiomaAux= "en";      
+      if (idioma){
+        idiomaAux = idioma;
+      }else {
+        idiomaAux = idioma;
+      }
+      document.documentElement.setAttribute("lang", idiomaAux);    
+      
   });//end ready
 })(jQuery);

@@ -1,6 +1,5 @@
 (function($) {
   $(document).ready(function() {
-      //alert('carrito');
       let tokenStr = localStorage.getItem("token");
       let token = "defecto  valor"; 
       if (tokenStr){
@@ -51,7 +50,6 @@
           let carritoStr = localStorage.getItem("carrito");
           if (carritoStr){
             //console.log(carritoStr);
-            console.log("-----------------");
             let carrito= JSON.parse(carritoStr);
             //console.log(carrito);
             let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
@@ -60,9 +58,6 @@
                 object.splice(index, 1);
                 localStorage.setItem("carrito", JSON.stringify(carrito));
                 //console.log("probando");
-                
-                
-                
                 
               }
               $("#cantidadElemCarrito").text(carrito.length);
@@ -76,7 +71,7 @@
 
       //http://localhost/prophp3bj/proyectoPHPComun/Apicarrito/completarCarrito
       $("#btnCompletarCarrito").on("click",function(){
-        alert(token);
+        //alert(token);
         let url= $("#url").val();
         let urlReq =url+"apicarrito/completarCarrito";
         
@@ -86,7 +81,7 @@
         
         var data = {"lista": carrito,
                     "usuario": 1 };
-                    console.log(data);                    
+                    //console.log(data);                    
               $.ajax({
                 url: urlReq,
                 headers: headers,
@@ -96,22 +91,14 @@
                 //dataType : 'text'
             })
             .done(function (data) {              
-              //pedido agregado con exito
-              console.log(data);
-              //data= JSON.parse(data);
-              console.log(data.resultado);
-              alert(data.token);
-              localStorage.setItem("carrito", JSON.stringify([]));
-              $("#cantidadElemCarrito").text(0);
               
-              $("#itemsCarrito").html(`<div id="carritoid"></div>`);
-              //console.log(data.resultado);
-              $("#numPedido").text(data.resultado);
-              //$("#resPedido").css( {"display":"block"});
+              localStorage.setItem("carrito", JSON.stringify([]));
+              $("#cantidadElemCarrito").text(0);              
+              $("#itemsCarrito").html(`<div id="carritoid"></div>`);              
+              $("#numPedido").text(data.resultado);              
               $("#resPedido").css("display","block");
-              //console.log($listaArticulos);
             })
-            .fail(function (jqXHR, textStatus, errorThrown) {alert(textStatus);  });
+            .fail(function (jqXHR, textStatus, errorThrown) {console.log(textStatus);  });
         });//end btnCompletarCarrito
 
 

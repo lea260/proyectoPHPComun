@@ -16,7 +16,6 @@
     <div class="row">
         <div class="col-sm">
             <h1>Ingreso</h1>
-          <h2><?=$this->token;?> </h2>-->
         </div>
     </div>
 

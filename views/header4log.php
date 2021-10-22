@@ -24,6 +24,7 @@ use \SimpleTranslation\Translate;?>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>articulos/listar">Articulos</a></li>
             <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>pedidos">Pedidos</a></li>
+            <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>pdf">Pdf</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="<?php echo constant('URL'); ?>idioma">Idioma</a></li>
           </ul>

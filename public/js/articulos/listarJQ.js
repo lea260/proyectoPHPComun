@@ -6,11 +6,7 @@
     let carrito;
     if (carritoStr){
       carrito = JSON.parse(carritoStr);
-      console.log("ento");
     }
-    
-      //alert('hola');
-      //console.log("funciona ver articulo");
       //alert("litarJQ");
       var $listaArticulos=[];
       let url= $("#url").val();
@@ -27,9 +23,7 @@
               dataType : 'json'
           })
           .done(function (data) { 
-            $listaArticulos= data.datos;
-            console.log($listaArticulos);
-            //console.log($listaArticulos);
+            $listaArticulos= data.datos;            
            })
           .fail(function (jqXHR, textStatus, errorThrown) {console.log(textStatus);  });
 
@@ -42,14 +36,9 @@
             let articuloId = $(this).data("articuloId");
             let articuloDescripcion = $(this).data("articuloDescripcion");
             let articuloCodigo = $(this).data("articuloCodigo");
-            console.log(articuloId);
-            console.log($listaArticulos);
+            
             let articulo= $listaArticulos.find(art => art.id ==articuloId);
-            console.log(articulo);
-
-            //console.log(JSON.stringify(articulo));            
             carrito = JSON.parse(localStorage.getItem("carrito"));
-            //console.log("carrito: "+ carrito);
             if (carrito==null){
               //inicilizo el carrito
               //agrego el elememto al carrito

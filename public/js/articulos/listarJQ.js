@@ -12,7 +12,7 @@
       //alert('hola');
       //console.log("funciona ver articulo");
       //alert("litarJQ");
-      let $listaArticulos=[];
+      var $listaArticulos=[];
       let url= $("#url").val();
       let urlReq =url+"api260260articulos/listar";
       //console.log("url: "+urlReq);
@@ -22,15 +22,16 @@
             $.ajax({
               url: urlReq,
               headers: headers,
-              type: 'DELETE',
-              data: data
+              type: 'POST',
+              data: data,
+              dataType : 'json'
           })
           .done(function (data) { 
-            $listaArticulos=data.datos;
-            console.log(data);
+            $listaArticulos= data.datos;
+            console.log($listaArticulos);
             //console.log($listaArticulos);
            })
-          .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });
+          .fail(function (jqXHR, textStatus, errorThrown) {console.log(textStatus);  });
 
           //asiganr la funcionalidad del carrito
           //const items = $(".btnAgregar");
@@ -42,7 +43,10 @@
             let articuloDescripcion = $(this).data("articuloDescripcion");
             let articuloCodigo = $(this).data("articuloCodigo");
             console.log(articuloId);
-            let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);
+            console.log($listaArticulos);
+            let articulo= $listaArticulos.find(art => art.id ==articuloId);
+            console.log(articulo);
+
             //console.log(JSON.stringify(articulo));            
             carrito = JSON.parse(localStorage.getItem("carrito"));
             //console.log("carrito: "+ carrito);

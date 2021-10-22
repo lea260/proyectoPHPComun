@@ -24,12 +24,13 @@
             $.ajax({
               url: urlReq,
               headers: headers,
-              type: 'DELETE',
-              data: data
+              type: 'POST',
+              data: data,
+              dataType : 'json'
           })
           .done(function (data) { console.log(data);
             $("#filaart-"+alumnoId).remove()})
-          .fail(function (jqXHR, textStatus, errorThrown) { serrorFunction(); });
+          .fail(function (jqXHR, textStatus, errorThrown) { console.log(textStatus); });
 
           } else {
             console.log("entro eslse");

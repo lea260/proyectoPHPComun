@@ -21,7 +21,7 @@
     </div>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d409.8758753478795!2d-56.218625241978096!3d-34.7302178643609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a1d2bb0d94746b%3A0x233db8c6106abffa!2sEscuela%20T%C3%A9cnica%20de%20Las%20Piedras!5e0!3m2!1ses!2suy!4v1634078326819!5m2!1ses!2suy" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
-        https://www.google.com.uy/maps/place/Baltasar+Brum+665,+15900+Las+Piedras,+Departamento+de+Canelones/@-34.729993,-56.2185528,20z/data=!4m5!3m4!1s0x95a1d2bb1276a837:0x497f67e4a2430e2c!8m2!3d-34.7301849!4d-56.2186145?hl=es&authuser=0
+
     <?php require 'views/footer2.php';?>
 
 

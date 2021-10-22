@@ -40,7 +40,7 @@
         
       }*/
       $("body").on("click",".btnEliminar" ,function(){
-        console.log("entro");
+        //console.log("entro");
         let articuloId= $(this).data("articuloId");
         //console.log(articuloId);
         const confirm = window.confirm("Deseas eliminar el elemento?");
@@ -53,7 +53,7 @@
             //console.log(carritoStr);
             console.log("-----------------");
             let carrito= JSON.parse(carritoStr);
-            console.log(carrito);
+            //console.log(carrito);
             let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
             carrito.forEach(function(art, index, object) {
               if(art.id == articuloId){
@@ -78,19 +78,21 @@
       $("#btnCompletarCarrito").on("click",function(){
         
         let url= $("#url").val();
-        let urlReq =url+"Apicarrito/completarCarrito";
+        let urlReq =url+"apicarrito/completarCarrito";
         
         //$token = localStorage.getItem('token');
         let headers = {'Content-Type':'application/json;charset=utf-8'}
                         //'Authorization': `Bearer ${token}`}; 
         
-        let data = {"lista": carrito,
+        var data = {"lista": carrito,
                     "usuario": 1 };
+                    console.log(data);
               $.ajax({
                 url: urlReq,
                 headers: headers,
                 type: 'POST',
-                data: JSON.stringify(data)
+                data: JSON.stringify(data),
+                dataType : 'json'
             })
             .done(function (data) {              
               //pedido agregado con exito
@@ -99,13 +101,13 @@
               $("#cantidadElemCarrito").text(0);
               
               $("#itemsCarrito").html(`<div id="carritoid"></div>`);
-              console.log(data.resultado);
+              //console.log(data.resultado);
               $("#numPedido").text(data.resultado)
               //$("#resPedido").css( {"display":"block"});
               $("#resPedido").css("display","block");
               //console.log($listaArticulos);
             })
-            .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });
+            .fail(function (jqXHR, textStatus, errorThrown) {console.log(jqXHR);  });
         });//end btnCompletarCarrito
 
 

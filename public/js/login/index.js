@@ -1,6 +1,6 @@
 (function($, param) {
   $(document).ready(function() {
-      alert('hola');
+      
       let form = $("#form01");
       //console.log(form);
       $("#btnEnviar").click(function(e) { 

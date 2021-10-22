@@ -4,7 +4,7 @@
       let tokenStr = localStorage.getItem("token");
       let token = "defecto  valor"; 
       if (tokenStr){
-        token = tokenStr
+        token = tokenStr;
       }
       $.ajaxSetup({
         headers: {
@@ -31,7 +31,7 @@
                         >Eliminar</button>
           </div>
           </div><!-- end card -->
-        </div><!-- end col --><?php }`
+        </div><!-- end col --><?php }`;
         $("#carritoid").after(insert02);
       });
       /*for (let index = 0; index < array.length; index++) {
@@ -76,38 +76,42 @@
 
       //http://localhost/prophp3bj/proyectoPHPComun/Apicarrito/completarCarrito
       $("#btnCompletarCarrito").on("click",function(){
-        
+        alert(token);
         let url= $("#url").val();
         let urlReq =url+"apicarrito/completarCarrito";
         
         //$token = localStorage.getItem('token');
-        let headers = {'Content-Type':'application/json;charset=utf-8'}
+        let headers = {'Content-Type':'application/json;charset=utf-8'};
                         //'Authorization': `Bearer ${token}`}; 
         
         var data = {"lista": carrito,
                     "usuario": 1 };
-                    console.log(data);
+                    console.log(data);                    
               $.ajax({
                 url: urlReq,
                 headers: headers,
                 type: 'POST',
                 data: JSON.stringify(data),
                 dataType : 'json'
+                //dataType : 'text'
             })
             .done(function (data) {              
               //pedido agregado con exito
               console.log(data);
+              //data= JSON.parse(data);
+              console.log(data.resultado);
+              alert(data.token);
               localStorage.setItem("carrito", JSON.stringify([]));
               $("#cantidadElemCarrito").text(0);
               
               $("#itemsCarrito").html(`<div id="carritoid"></div>`);
               //console.log(data.resultado);
-              $("#numPedido").text(data.resultado)
+              $("#numPedido").text(data.resultado);
               //$("#resPedido").css( {"display":"block"});
               $("#resPedido").css("display","block");
               //console.log($listaArticulos);
             })
-            .fail(function (jqXHR, textStatus, errorThrown) {console.log(jqXHR);  });
+            .fail(function (jqXHR, textStatus, errorThrown) {alert(textStatus);  });
         });//end btnCompletarCarrito
 
 

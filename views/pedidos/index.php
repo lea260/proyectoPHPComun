@@ -20,7 +20,7 @@
         <h1>Sección de pedidos</h1>
     </div>
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm table-responsive">
             <table class="table">
                 <thead>
                 <tr>

@@ -20,7 +20,7 @@
             <h1><?php echo $this->resultadoLogin; ?></h1>
         </div>
     </div>
-        <form class="row" action="<?php echo constant('URL'); ?>login/ingresar" method="post"
+        <form class="row" action="<?php echo constant('URL'); ?>mail/enviar" method="post"
         id="form01">
         <div class="col-lg-4 col-md-6 col-sm-12">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -28,12 +28,13 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-            name="nombre"
-            value="juan">
+            name="correo"
+            value="">
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <textarea name="tel[]" id="" cols="30" rows="10"></textarea>
+            <label for="mensajeTextarea" class="form-label">Mensaje</label>
+            <textarea id="mensajeTextarea" cols="30" rows="10" name="mensaje"
+            value="mensaje"></textarea>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 py-2">
             <button type="submit" class="btn btn-primary">Submit</button>

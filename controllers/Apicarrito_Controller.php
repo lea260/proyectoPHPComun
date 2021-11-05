@@ -29,7 +29,6 @@ class Apicarrito_Controller extends Controller
             if ($role != 'cliente') {
                 throw new Exception("no tiene autorizacion");
             }
-
             $json = file_get_contents('php://input');
             //convierto en un array asociativo de php
             $datos = json_decode($json);
